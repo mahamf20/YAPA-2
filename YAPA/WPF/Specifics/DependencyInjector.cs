@@ -15,8 +15,9 @@ namespace YAPA.WPF.Specifics
 
         public object Resolve(Type type)
         {
-            return _autofac.Resolve(type);
-        }
+                return _autofac.Resolve(type);
+            
+             }
 
         public void Register(Type type, bool singleInsntace = false)
         {

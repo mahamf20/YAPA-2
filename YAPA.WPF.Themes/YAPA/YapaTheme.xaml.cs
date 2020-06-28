@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Windows.Controls.Primitives;
+
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -513,5 +515,34 @@ namespace YAPA
         {
             CloseApp();
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txt.IsReadOnly = false;
+            txt.IsEnabled = true;
+            string tasks;
+            tasks = txt.Text;
+            txtlist2.IsReadOnly = false;
+            txtlist2.IsEnabled = true;
+           
+            tasks = tasks + " " + txtlist2.Text;
+
+
+        }
+
+        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+          
+                txtcateg.IsReadOnly = false;
+                txtcateg.IsEnabled = true;
+                string category;
+                category = txtcateg.Text;
+                txt2.IsReadOnly = false;
+                txt2.IsEnabled = true;
+                category = category + " " + txt2.Text;
+
+           
+            }
+        }
     }
-}
+

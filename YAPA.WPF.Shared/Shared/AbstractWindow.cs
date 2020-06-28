@@ -18,6 +18,7 @@ namespace YAPA.Shared
         public const string Skip = "/skip";
         public const string Settings = "/settings";
         public const string HomePage = "/homepage";
+        public const string BufferInterval = "/buffer";
     }
 
     public abstract class AbstractWindow : Window, IApplication
@@ -244,6 +245,15 @@ namespace YAPA.Shared
             };
             jumpList.JumpItems.Add(homepageTask);
 
+            var bufferinterval = new JumpTask
+            {
+                Title = "Buffer Interval",
+                Description = "Skip Buffer interval",
+                ApplicationPath = Assembly.GetEntryAssembly().Location,
+                Arguments = CommandLineArguments.BufferInterval,
+
+            };
+            jumpList.JumpItems.Add(bufferinterval);
             jumpList.Apply();
         }
 

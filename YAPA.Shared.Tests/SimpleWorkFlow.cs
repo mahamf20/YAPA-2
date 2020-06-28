@@ -24,14 +24,16 @@ namespace YAPA.Shared.Tests
             var workTime = 25 * 60;
             var breakTime = 5 * 60;
             var longBreakTime = 10 * 60;
+            var bufferinterval = 15;
 
             var profileName = "test";
-            var profile = new PomodoroProfile
+            var profile = new PomodoroProfile()
             {
-                AutoStartBreak = false,
+                AutoStartBreak = true,
                 BreakTime = breakTime,
                 WorkTime = workTime,
                 LongBreakTime = longBreakTime
+                
             };
 
             var profiles = new Dictionary<string, PomodoroProfile> {[profileName] = profile};
@@ -335,6 +337,7 @@ namespace YAPA.Shared.Tests
             Assert.AreEqual(breakTime, engine.Elapsed);
             Assert.AreEqual(1, engine.Index);
         }
+
 
         [TestMethod]
         public void SimpleWorkflowThroughAllPomodoros_CountBackwards()
